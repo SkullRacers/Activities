@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Games</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <style>
+/* General Container Styling */
+#readingComprehension {
+    width: 80%; /* Flexible width */
+    max-width: 700px; /* Limit the maximum width for readability */
+    margin: 20px auto; /* Center the container and add top-bottom margin */
+    padding: 20px; /* Add padding inside the container */
+    background-color: #f9f9f9; /* Light background for better contrast */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    font-family: 'Arial', sans-serif; /* Clean and modern font */
+    line-height: 1.6; /* Improve spacing between lines */
+    color: #333; /* Dark text for contrast */
+}
+
+/* Heading Styling */
+#readingComprehension h1 {
+    font-size: 2em; /* Large heading size */
+    color: #222; /* Slightly darker color for the heading */
+    text-align: center; /* Center-align the heading */
+    margin-bottom: 15px; /* Space below the heading */
+    font-weight: bold; /* Make it stand out */
+}
+
+/* Paragraph Styling */
+#readingComprehension p {
+    font-size: 1.2em; /* Moderate font size for easy reading */
+    text-align: justify; /* Justify the text for a clean look */
+    margin-top: 10px; /* Add spacing between paragraphs */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #readingComprehension {
+        width: 90%; /* Wider container for smaller screens */
+        padding: 15px; /* Slightly reduce padding */
+    }
+
+    #readingComprehension h1 {
+        font-size: 1.8em; /* Slightly smaller heading */
+    }
+
+    #readingComprehension p {
+        font-size: 1em; /* Adjust paragraph font size */
+    }
+}
+
+
+
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #head h1 {
+        font-family: "ADLaM Display", serif;
+        color: white;
+      }
+      #head {
+        background-color: #323b4c;
+        width: 100vw;
+        height: 20vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      body {
+        overflow-x: hidden;
+        height: 200vh;
+      }
+      #btn1 {
+        background-image: linear-gradient(#f9a48d, #fdce57);
+        padding: 14px;
+        border-radius: 40px;
+        cursor: pointer;
+        transition: 1s all ease-in-out;
+        margin-top: 9px;
+      }
+      #btn1:hover {
+        box-shadow: 4px 4px 4px pink;
+      }
+
+      #questions {
+        background-color: #f9a48d;
+        font-family: "ADLaM Display";
+        padding: 28px;
+        display: none;
+        margin-top: 12px;
+        border-radius: 60px;
+        font-size: 12px;
+        transition: 1s all ease-in-out;
+        opacity: 0;
+      }
+      #questions h1 {
+        margin-top: 9px;
+      }
+
+      .row {
+        display: flex;
+        justify-content: center;
+      }
+      .blocks {
+        padding: 32px;
+        border: 2px solid black;
+        cursor: pointer;
+      }
+      #tic-tac-toe {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      }
+
+      /* From Uiverse.io by KINGFRESS */ 
+button {
+  font-weight: bold;
+  color: white;
+  border-radius: 2rem;
+  cursor: pointer;
+  width: 95.02px;
+  height: 42.66px;
+  border: none;
+  background-color: #3653f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button .span-mother {
+  display: flex;
+  overflow: hidden;
+}
+
+button:hover .span-mother {
+  position: absolute;
+}
+
+button:hover .span-mother span {
+  transform: translateY(1.2em);
+}
+
+button .span-mother span:nth-child(1) {
+  transition: 0.2s;
+}
+
+button .span-mother span:nth-child(2) {
+  transition: 0.3s;
+}
+
+button .span-mother span:nth-child(3) {
+  transition: 0.4s;
+}
+
+button .span-mother span:nth-child(4) {
+  transition: 0.5s;
+}
+
+button .span-mother span:nth-child(5) {
+  transition: 0.6s;
+}
+
+button .span-mother span:nth-child(6) {
+  transition: 0.7s;
+}
+
+button .span-mother2 {
+  display: flex;
+  position: absolute;
+  overflow: hidden;
+}
+
+button .span-mother2 span {
+  transform: translateY(-1.2em);
+}
+
+button:hover .span-mother2 span {
+  transform: translateY(0);
+}
+
+button .span-mother2 span {
+  transition: 0.2s;
+}
+
+button .span-mother2 span:nth-child(2) {
+  transition: 0.3s;
+}
+
+button .span-mother2 span:nth-child(3) {
+  transition: 0.4s;
+}
+
+button .span-mother2 span:nth-child(4) {
+  transition: 0.5s;
+}
+
+button .span-mother2 span:nth-child(5) {
+  transition: 0.6s;
+}
+
+button .span-mother2 span:nth-child(6) {
+  transition: 0.7s;
+}
+
+/* From Uiverse.io by MuhammadHasann */ 
+button {
+  position: relative;
+  padding: 12px 35px;
+  background: #fec195;
+  font-size: 17px;
+  font-weight: 500;
+  color: #181818;
+  border: 3px solid #fec195;
+  border-radius: 8px;
+  box-shadow: 0 0 0 #fec1958c;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  margin-top: 23px;
+}
+
+.star-1 {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 25px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 1s cubic-bezier(0.05, 0.83, 0.43, 0.96);
+}
+
+.star-2 {
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-3 {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-4 {
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  width: 8px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 0.8s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-5 {
+  position: absolute;
+  top: 25%;
+  left: 45%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 0.6s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-6 {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 0.8s ease;
+}
+
+button:hover {
+  background: transparent;
+  color: #fec195;
+  box-shadow: 0 0 25px #fec1958c;
+}
+
+button:hover .star-1 {
+  position: absolute;
+  top: -80%;
+  left: -30%;
+  width: 25px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+button:hover .star-2 {
+  position: absolute;
+  top: -25%;
+  left: 10%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+button:hover .star-3 {
+  position: absolute;
+  top: 55%;
+  left: 25%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+button:hover .star-4 {
+  position: absolute;
+  top: 30%;
+  left: 80%;
+  width: 8px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+button:hover .star-5 {
+  position: absolute;
+  top: 25%;
+  left: 115%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+button:hover .star-6 {
+  position: absolute;
+  top: 5%;
+  left: 60%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+.fil0 {
+  fill: #fffdef;
+}
+
+
+    </style>
+    <div id="head">
+      <h1 id="section2" style="font-size: 67px"></h1>
+    </div>
+    <div id="readingComprehension">
+      <u><h1 style="font-size: 56px" id="section1"></h1></u>
+      <h1>The Gaganyaan Project: India’s Journey to Space</h1>
+      <p id="section3P"></p>
+      <button onclick="showQ()">
+        Show Questions
+        <div class="star-1">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xml:space="preserve"
+            version="1.1"
+            style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+            viewBox="0 0 784.11 815.53"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <defs></defs>
+            <g id="Layer_x0020_1">
+              <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+              <path
+                class="fil0"
+                d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+              ></path>
+            </g>
+          </svg>
+        </div>
+        <div class="star-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xml:space="preserve"
+            version="1.1"
+            style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+            viewBox="0 0 784.11 815.53"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <defs></defs>
+            <g id="Layer_x0020_1">
+              <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+              <path
+                class="fil0"
+                d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+              ></path>
+            </g>
+          </svg>
+        </div>
+        <div class="star-3">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xml:space="preserve"
+            version="1.1"
+            style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+            viewBox="0 0 784.11 815.53"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <defs></defs>
+            <g id="Layer_x0020_1">
+              <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+              <path
+                class="fil0"
+                d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+              ></path>
+            </g>
+          </svg>
+        </div>
+        <div class="star-4">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xml:space="preserve"
+            version="1.1"
+            style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+            viewBox="0 0 784.11 815.53"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <defs></defs>
+            <g id="Layer_x0020_1">
+              <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+              <path
+                class="fil0"
+                d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+              ></path>
+            </g>
+          </svg>
+        </div>
+        <div class="star-5">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xml:space="preserve"
+            version="1.1"
+            style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+            viewBox="0 0 784.11 815.53"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <defs></defs>
+            <g id="Layer_x0020_1">
+              <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+              <path
+                class="fil0"
+                d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+              ></path>
+            </g>
+          </svg>
+        </div>
+        <div class="star-6">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xml:space="preserve"
+            version="1.1"
+            style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+            viewBox="0 0 784.11 815.53"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <defs></defs>
+            <g id="Layer_x0020_1">
+              <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+              <path
+                class="fil0"
+                d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+              ></path>
+            </g>
+          </svg>
+        </div>
+      </button>
+            <div id="questions">
+        <h1>
+          What is the Gaganyaan project, and why is it important for India?
+        </h1>
+        <h1>
+          What does the name “Gaganyaan” mean? Break it down into its two parts.
+        </h1>
+        <h1>
+          How many astronauts will Gaganyaan carry, and for how many days will
+          they stay in space?
+        </h1>
+        <h1>
+          What lesson can children learn from ISRO’s work on the Gaganyaan
+          project?
+        </h1>
+        <h1>
+          Open-Ended Question: Make an imaginary planet with conditions made by
+          you and your imagination! Once your imaginary planet is created,
+          design a plan for scientists to enter and explore your amazing world
+          of imagination on an A-4 size sheet.
+        </h1>
+      </div>
+    </div>
+
+    <div id="tic-tac-toe">
+      <h1>Tic-Tack-Toe</h1>
+      <div id="main-game-div">
+        <div class="row">
+          <div class="blocks" id="aW1">
+            <h1>A</h1>
+          </div>
+          <div class="blocks">
+            <h1>D</h1>
+          </div>
+          <div class="blocks">
+            <h1>A</h1>
+          </div>
+          <div class="blocks">
+            <h1>W</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="blocks" id="aW2">
+            <h1>R</h1>
+          </div>
+          <div class="blocks"><h1>N</h1></div>
+          <div class="blocks" id="aW4">
+            <h1>Y</h1>
+          </div>
+          <div class="blocks" id="aW3">
+            <h1>N</h1>
+          </div>
+        </div>
+        <div class="row">
+            <div class="blocks">
+                <h1>K</h1>
+            </div>
+            <div class="blocks">
+                <h1>M</h1>
+            </div>
+            <div class="blocks"><h1>T</h1></div>
+            <div class="blocks"><h1>A</h1></div>
+        </div>
+    </div>
+    <br>
+    <h1 id="word">Your Word Is: <span id="woord"></span></h1>
+
+    </div>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        
+        let word = ['ARMY', 'TANK', 'DAWN']
+        document.getElementById('woord').innerText = word[0];
+
+      var typed = new Typed("#section1", {
+        strings: ["Reading Comprehension"],
+        typeSpeed: 50,
+        showCursor: false,
+      });
+
+      var typed = new Typed("#section2", {
+        strings: ["Activities"],
+        typeSpeed: 50,
+        showCursor: false,
+      });
+
+
+
+      var typed = new Typed("#section3P", {
+        strings: [
+          `The Gaganyaan project is a special mission by ISRO, the Indian Space Research Organisation, that aims to send humans into space. It is India’s first human spaceflight mission, and it is a big step for our country in exploring the universe. The name “Gaganyaan” comes from the Sanskrit words “Gagan,” which means sky, and “Yaan,” which means vehicle. Together, it means "Sky Vehicle."
+    
+            In this project, ISRO plans to send three astronauts, called “vyomanauts” (from the Sanskrit word “Vyom,” meaning space), into orbit around Earth. These astronauts will stay in space for three days, where they will perform experiments and observe how space affects the human body.
+            
+            The spacecraft, Gaganyaan, is like a tiny house designed for space. It has everything the astronauts need to live and work, such as oxygen, food, and tools. It will be launched into space using a powerful rocket called the GSLV Mk III, also known as the LVM3. This rocket will carry the spacecraft up into space and then return safely to Earth.
+            
+            Before sending humans, ISRO is conducting many tests. They are launching special robots, like the humanoid Vyommitra, to ensure everything works perfectly.
+            
+            The Gaganyaan project is not just about sending people into space; it is also about inspiring young minds to dream big. It shows that with hard work and determination, India can achieve great things in science and technology.
+            
+            One day, the Gaganyaan mission may lead to even bigger adventures, like building space stations or traveling to the Moon and Mars. It is an exciting time for India, and the whole world is watching as ISRO makes history.
+    
+            So, if you dream of becoming an astronaut or a space scientist, the Gaganyaan mission is proof that your dreams can come true! Keep looking at the stars, because the sky is not the limit—it’s just the beginning!`,
+        ],
+        typeSpeed: -8450,
+        showCursor: false,
+      });
+      function showQ() {
+        document.getElementById("questions").style.display = "block";
+        document.getElementById("questions").style.opacity = 1;
+      }
+    </script>
+  </body>
+</html>
+<script>
+    const words = ['ARMY', 'TANK', 'DAWN'];
+    let currentWordIndex = 0;
+
+    function playGame() {
+        const blocks = document.querySelectorAll('.blocks');
+        let selectedWord = '';
+
+        blocks.forEach(block => {
+            block.addEventListener('click', () => {
+                selectedWord += block.innerText;
+                if (selectedWord.length === words[currentWordIndex].length) {
+                    if (selectedWord === words[currentWordIndex]) {
+                        alert('Correct Word!');
+                        currentWordIndex++;
+                        if (currentWordIndex < words.length) {
+                            document.getElementById('woord').innerText = words[currentWordIndex];
+                        } else {
+                            alert('You have completed all words!')
+                        }
+                    } else {
+                        alert('Incorrect Word, Try Again!');
+                    }
+                    selectedWord = '';
+                }
+            });
+        });
+    }
+
+    playGame();
+</script>
